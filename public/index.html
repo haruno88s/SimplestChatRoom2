@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat app</title>
+</head>
+<body>
+    <h1>Chat test</h1>
+    <div class="main">
+        <div class="name">
+            <span><i></i></span>
+            <input type="text" id="nameinput" class="nameinput" value="anonymous">
+        </div>
+        <ul class="messagecontainer" id = "messagecontainer">
+            <li class="messageleft">
+                <p class="message">
+                    leftfjkdjfsd
+                    <span>blue time</span>
+                </p>
+            </li>
+            <li class="messageright">
+                <p class="message">
+                    right
+                    <span>Red time</span>
+                </p>
+            </li>
+
+            <li class="messagefeedback">
+                <p class="feedback" id="feedback">he is tyoing</p>
+            </li>
+        </ul>
+        <form class="messageform" id="messageform">
+            <input type="text" name = "message" class="messageinput" id="messageinput">
+            <div class="vdivider"></div>
+            <button class="sendbutton" type="submit">send</button>
+        </form>
+
+        <h3 class="clientstotal" id="clientstotal">TotalClients</h3>
+    </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
