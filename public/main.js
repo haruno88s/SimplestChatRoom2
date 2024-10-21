@@ -38,8 +38,30 @@ function addmessagetoui(isOwnmessage, data){
             <li class="${isOwnmessage ? "messageright" :"messageleft"}">
                 <p class="message">
                     ${data.message}
-                    <span>${data.name} || ${(data.datetime)}</span>
+                    <span>${data.name} || ${moment(data.dateTime).fromNow()}</span>
                 </p>
             </li>`
     messagecontainer.innerHTML += element;
+    scrolltobottom();
 }
+
+function scrolltobottom(){
+    messagecontainer.scrollTo(0,messagecontainer.scrollHeight)
+}
+
+messageinput.addEventListener('focus',(e)=>{
+    socket.emit('feedback',{
+        feedback: `${nameinput.value} is typing a message`
+    })
+})
+
+messageinput.addEventListener('keypress',(e)=>{
+    socket.emit('feedback',{
+        feedback: `${nameinput.value} is typing a message`
+    })
+})
+messageinput.addEventListener('blur',(e)=>{
+    socket.emit('feedback',{
+        feedback: '',
+    })
+})

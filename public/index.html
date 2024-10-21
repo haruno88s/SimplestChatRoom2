@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Chat app</title>
 </head>
 <body>
-    <h1>Chat test</h1>
+    <h1 class="title">Simplest Chat App</h1>
     <div class="main">
         <div class="name">
-            <span><i></i></span>
+            <span><i class="fa fa-user"></i></span>
             <input type="text" id="nameinput" class="nameinput" value="anonymous">
         </div>
         <ul class="messagecontainer" id = "messagecontainer">
@@ -33,12 +35,13 @@
         <form class="messageform" id="messageform">
             <input type="text" name = "message" class="messageinput" id="messageinput">
             <div class="vdivider"></div>
-            <button class="sendbutton" type="submit">send</button>
+            <button class="sendbutton" type="submit">Send <span><i class="fa fa-paper-plane"></i></span></button>
         </form>
 
-        <h3 class="clientstotal" id="clientstotal">TotalClients</h3>
+        <h3 class="clientstotal" id="clientstotal">Total Clients</h3>
     </div>
 <script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="main.js"></script>
 </body>
 </html>
